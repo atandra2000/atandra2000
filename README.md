@@ -13,7 +13,7 @@
 | Project | Status | Link |
 |---------|--------|------|
 | Stable Diffusion 1.x (860M UNet) | Trained 42 epochs on 2x RTX 5090 | [repo](https://github.com/atandra2000/StableDiffusion) |
-| VisionLangModel (PaliGemma-style) | Trained end-to-end on COCO captions | [repo](https://github.com/atandra2000/VisionLanguageModel) |
+| VisionLanguageModel (PaliGemma-style) | Trained end-to-end on COCO captions | [repo](https://github.com/atandra2000/VisionLanguageModel) |
 | FaceAgingCycleGAN (AdaIN) | 31 epochs on IMDB-WIKI | [repo](https://github.com/atandra2000/FaceAgingCycleGAN) |
 | FaceGenerationVAE (beta-VAE) | 50 epochs on CelebA | [repo](https://github.com/atandra2000/FaceGenerationVAE) |
 | DCGAN-Face-Generation | 50 epochs on CelebA | [repo](https://github.com/atandra2000/DCGAN-Face-Generation) |
