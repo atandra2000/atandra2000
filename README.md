@@ -34,6 +34,13 @@ Projects that have completed training runs with tracked metrics.
 | **TranslationLM** (EN→IT seq2seq) | 20 epochs on OPUS Books; cross-attention visualizations, custom SentencePiece BPE | [repo](https://github.com/atandra2000/TranslationLM) |
 | **GPT-From-Scratch** | 200-line educational GPT-2, trained on Tiny Shakespeare | [repo](https://github.com/atandra2000/GPT-From-Scratch) |
 
+
+## Autonomous Research Platform
+
+| Project | Architecture | Key metrics | Link |
+|---------|-------------|-------------|------|
+| **Autonomous ML Research Engineer** | 15-phase multi-agent platform: literature discovery, paper analysis, repo analysis, experiment planning, code implementation, training execution, evaluation, autonomous looping, self-repair, end-to-end research workflows | 23 agents, 61 tools, 186 models, 878 tests, provider-agnostic LLM layer with per-agent routing (Qwen3-coder, GLM-5.2, MiniMax-M3) | [repo](https://github.com/atandra2000/AutonomousResearcher) |
+
 ## In-progress pipelines
 
 | Project | Status | Link |
@@ -51,3 +58,4 @@ Projects that have completed training runs with tracked metrics.
 - Weights & Biases: [wandb.ai/atandrabharati-self](https://wandb.ai/atandrabharati-self)
 - Kaggle: [kaggle.com/atandrabharati](https://kaggle.com/atandrabharati)
 - Comet: [comet.com/atandrabharati](https://comet.com/atandrabharati)
+
