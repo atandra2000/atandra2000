@@ -6,7 +6,7 @@
 
 - **78% peak memory reduction (92 GB → 20 GB)** for LLM pretraining via gradient checkpointing, chunked cross-entropy, and disk-backed token caching — enabling 2× batch-size headroom on a single A100 80GB.
 - **Best training loss 0.0947 at epoch 16** training Stable Diffusion 1.x from scratch (860M UNet) over a 7-phase curriculum on 2× RTX 5090.
-- **11 end-to-end projects** across LLMs, generative vision, multimodal AI, and video — each engineered for single-GPU feasibility (A100, RTX 5090, RTX 6000 Ada, RTX 3090, P100, T4) with BF16, Flash Attention 2, gradient checkpointing, and `torch.compile`.
+- **12 end-to-end projects** across LLMs, generative vision, multimodal AI, and video — each engineered for single-GPU feasibility (A100, RTX 5090, RTX 6000 Ada, RTX 3090, P100, T4) with BF16, Flash Attention 2, gradient checkpointing, and `torch.compile`.
 
 ## Flagship architectures
 
