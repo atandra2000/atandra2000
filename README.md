@@ -12,7 +12,7 @@ LLMs · Latent Diffusion · Multimodal · Video Understanding · Agentic ML · S
 
 ---
 
-## 🎯 Open To
+## Open To
 
 **Deep Learning Research Engineer** · **LLM Engineer** · **GenAI / Diffusion Engineer** · **Agentic ML Engineer**
 
@@ -20,34 +20,34 @@ Remote-friendly · Available worldwide
 
 ---
 
-## 🧭 Now
+## Currently
 
-Shipping the **Autonomous ML Research Engineer** platform (15 phases, 23 agents) and developing **HyMo** — the flagship hybrid language model (3:1 Gated Delta Net / Multi-Head Latent Attention, Asymmetric MoE, custom Triton GDN kernel, 750M active / 1.86B stored params). Also just released two new long-context / state-space reproductions: **GPT-OSS-Lite** (sliding/full attention alternation + learned sinks, 2× KV-cache cut at 128K) and **Mamba-3-Lite** (complex-valued SSD + MIMO mixing, zero causal conv), plus two new vision products: **Detect-Objects** (deformable set-prediction detector) and **Upscale-SR** (4× diffusion + SSM super-resolution).
+Shipping the **Autonomous ML Research Engineer** platform (15 phases, 23 agents) and developing **HyMo** — the flagship hybrid language model (3:1 Gated Delta Net / Multi-Head Latent Attention, Asymmetric MoE, custom Triton GDN kernel, 750M active / 1.86B stored params). Also recently released two new long-context / state-space reproductions: **GPT-OSS-Lite** (sliding/full attention alternation + learned sinks, 2× KV-cache cut at 128K) and **Mamba-3-Lite** (complex-valued SSD + MIMO mixing, zero causal conv), plus two new vision products: **Detect-Objects** (deformable set-prediction detector) and **Upscale-SR** (4× diffusion + SSM super-resolution).
 
 ---
 
-## 🛠️ Stack
+## Tech Stack
 
-**Languages & ML core**  
+**Languages & ML core**
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch&logoColor=white)
 ![CUDA](https://img.shields.io/badge/CUDA-12.x-76B900?logo=nvidia&logoColor=white)
 
-**Architectures**  
+**Architectures**
 Transformers · GQA · MLA · Sliding/Full Attention Alternation · Learned Attention Sinks · YaRN RoPE · SwiGLU · RMSNorm · MoE · Gated Delta Net · MTP · SSD (real & complex64) · MIMO head mixing · Diffusion UNet · VAE · GAN · CycleGAN · AdaIN · ST-GCN · HRNet · SigLIP · Deformable Detection · Super-Resolution
 
-**Optimization & numerics**  
+**Optimization & numerics**
 BF16 · FP16 · FP8 · Flash Attention 2 · SDPA · `torch.compile` · `channels_last` · Gradient checkpointing · μP scaling · WSD LR · NorMuon · CautiousAdamW · Chunked cross-entropy · Disk-backed token caching · Fused optimizers · Chinchilla-optimal scaling
 
-**Hardware validated**  
+**Hardware validated**
 A100 80GB · RTX 5090 (Blackwell) · RTX 6000 Ada · RTX 3090 · P100 · 2× T4
 
-**Tooling**  
+**Tooling**
 HuggingFace · diffusers · tiktoken · W&B · Comet · safetensors · ONNX · TensorRT · FastAPI · Gradio · pydantic v2 · ChromaDB · Ollama Cloud
 
 ---
 
-## 🏆 Highlights
+## Highlights
 
 - **78% peak memory reduction (92 GB → 20 GB)** for LLM pretraining via gradient checkpointing, chunked cross-entropy, and disk-backed token caching — enabling 2× batch-size headroom on a single A100 80GB.
 - **750M active / 1.86B stored params** in **HyMo** — a novel 3:1 Gated Delta Net / Multi-Head Latent Attention hybrid with Asymmetric MoE, MTP, a custom Triton GDN kernel, and FSDP-2 dual-optimizer training.
@@ -60,7 +60,7 @@ HuggingFace · diffusers · tiktoken · W&B · Comet · safetensors · ONNX · T
 
 ---
 
-## 📂 Projects
+## Projects
 
 ### LLM (7)
 
@@ -96,7 +96,7 @@ HuggingFace · diffusers · tiktoken · W&B · Comet · safetensors · ONNX · T
 
 ---
 
-## ✍️ Writing
+## Writing
 
 - **[Multi-Head Latent Attention — A Technical Deep-Dive](https://github.com/atandra2000/DeepSeek-v3-Lite/blob/main/MLA.md)** — 643-line reference covering KV-cache math, low-rank compression algebra, the absorption-trick derivation, decoupled RoPE mechanics, and SDPA vs manual attention trade-offs in DeepSeek-V2/V3.
 - **[Attention Sinks — StreamingLLM for GPT-OSS](https://github.com/atandra2000/GPT-OSS-Lite/blob/main/ATTENTION_SINKS.md)** — 600-line reference on the learned per-head sink bias, its BF16 numerical-stability story (clamped to [-10, 15]), and its interaction with sliding/full attention alternation.
@@ -104,7 +104,7 @@ HuggingFace · diffusers · tiktoken · W&B · Comet · safetensors · ONNX · T
 
 ---
 
-## 🔬 Engineering Themes
+## Engineering Principles
 
 - **From-scratch PyTorch** — no Trainer, no Lightning, no accelerate; every layer written by hand
 - **Single-GPU feasibility** — BF16, gradient checkpointing, FA2, `channels_last`, fused optimizers
@@ -117,18 +117,18 @@ HuggingFace · diffusers · tiktoken · W&B · Comet · safetensors · ONNX · T
 
 ---
 
-## 🎓 Background
+## Background
 
 B.Tech, 2024 · Heritage Institute of Technology, Kolkata. Self-taught in deep learning through two years of from-scratch implementation — engineering discipline from infrastructure and constraint work translates directly to memory budgets, distributed training, and reproducible ML systems.
 
 ---
 
-## 📫 Connect
+## Connect
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-atandra2000.github.io-1f883d?style=flat-square&logo=google-chrome&logoColor=white)](https://atandra2000.github.io/mycv)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-atandrabharati-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/atandrabharati)
 [![GitHub](https://img.shields.io/badge/GitHub-atandra2000-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/atandra2000)
-[![W&B](https://img.shields.io/badge/W&B-atandrabharati--self-FCB439?style=flat-square&logo=weightsandbiases&logoColor=black)](https://wandb.ai/atandrabharati-self)
+[![W&B](https://img.shields.io/badge/W%26B-atandrabharati--self-FCB439?style=flat-square&logo=weightsandbiases&logoColor=black)](https://wandb.ai/atandrabharati-self)
 [![Kaggle](https://img.shields.io/badge/Kaggle-atandrabharati-20BEFF?style=flat-square&logo=kaggle&logoColor=white)](https://kaggle.com/atandrabharati)
 [![Comet](https://img.shields.io/badge/Comet-atandrabharati-2C3E50?style=flat-square)](https://comet.com/atandrabharati)
 [![Email](https://img.shields.io/badge/Email-atandra.bharati@gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:atandra.bharati@gmail.com)
