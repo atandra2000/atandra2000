@@ -49,14 +49,10 @@ HuggingFace · diffusers · tiktoken · W&B · Comet · safetensors · ONNX · T
 
 ## 🏆 Highlights
 
-- **78% peak memory reduction (92 GB → 20 GB)** for LLM pretraining via gradient checkpointing, chunked cross-entropy, and disk-backed token caching — enabling 2× batch-size headroom on a single A100 80GB.
-- **750M active / 1.86B stored params** in **HyMo** — a novel 3:1 Gated Delta Net / Multi-Head Latent Attention hybrid with Asymmetric MoE, MTP, a custom Triton GDN kernel, and FSDP-2 dual-optimizer training.
-- **Training loss 0.0947 at epoch 16** on Stable Diffusion 1.x (860M UNet) trained from random init across a 7-phase curriculum on 2× RTX 5090; epoch-42 checkpoint released.
-- **2× KV-cache reduction at 128K context** in GPT-OSS-Lite via sliding-window(128) / full-attention alternation with learned attention-sink bias and YaRN RoPE — verified at 1.13 GB vs 2.25 GB pure GQA (BF16).
-- **Complex64 SSD with 50% smaller state** (N=64 vs Mamba-2's N=128) achieves parity loss on the same 8.0B-token Chinchilla run, plus MIMO inter-head mixing and zero causal convolution — pure PyTorch, no custom CUDA.
-- **~30 FPS inference on RTX 3090** for skeleton-based action recognition, served via ONNX + TensorRT + FastAPI.
-- **878 passing tests · 15 cooperating phases · 23 agents · 61 tools · 186 models** in the Autonomous ML Research Engineer platform — full paper-to-conclusions loop with self-repair and provider-agnostic LLM routing.
-- **643-line technical deep-dive on MLA** (Multi-Head Latent Attention) covering KV-cache math, low-rank compression, the absorption-trick derivation, and decoupled RoPE mechanics.
+- **Efficiency at scale.** Cut peak pretraining memory 78% (92 → 20 GB) for 2× batch headroom on one A100 80GB, and halved KV-cache at 128K context (1.13 vs 2.25 GB) via sliding/full attention alternation — cheaper training and cheaper serving.
+- **Novel hybrid architecture.** HyMo pairs a 3:1 Gated Delta Net / Multi-Head Latent Attention stack (750M active / 1.86B stored) with Asymmetric MoE, MTP, and a hand-written Triton GDN kernel trained under FSDP-2.
+- **Faithful from-scratch reproductions.** Stable Diffusion 1.x UNet reaching loss 0.0947 from random init, plus complex64 SSD matching baseline loss at 50% smaller state (N=64) with MIMO mixing and zero custom CUDA.
+- **Shipped, deployable systems.** ~30 FPS skeleton action recognition via ONNX + TensorRT + FastAPI, and an 878-test autonomous research platform (15 phases · 23 agents · 186 models) that runs the full paper-to-conclusions loop.
 
 ---
 
