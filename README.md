@@ -66,7 +66,7 @@ HuggingFace · diffusers · tiktoken · W&B · Comet · safetensors · ONNX · T
 
 | Project | Scale | Highlight | Hardware | Repo |
 |---------|-------|-----------|----------|------|
-| **HyMo** ⭐ | 750M active / 1.86B stored | 3:1 GDN/MLA hybrid · Asymmetric MoE · MTP · custom Triton GDN kernel · FSDP-2 | 4× A100 80GB | [→](https://github.com/atandra-bharati/hymo) |
+| **HyMo** ⭐ | 750M active / 1.86B stored | 3:1 GDN/MLA hybrid · Asymmetric MoE · MTP · custom Triton GDN kernel · FSDP-2 | 4× A100 80GB | [→](https://github.com/atandra2000/HyMo) |
 | **GPT-OSS-Lite** | 502M / 247M active | Sliding(128)/Full attention alt · learned sink bias · YaRN 128K · top-2-of-8 MoE · **2× KV-cache cut at 128K** · **130 tests** | A100 80GB | [→](https://github.com/atandra2000/GPT-OSS-Lite) |
 | **Mamba-3-Lite** | ~380M | Complex64 SSD (N=64) · MIMO head mixing · zero causal conv · pure PyTorch | A100 80GB | [→](https://github.com/atandra2000/Mamba-3-Lite) |
 | **DeepSeek-v3-Lite** | ~422M | MLA + AuxLossFreeGate MoE + MTP, end-to-end with absorption-trick inference · **643-line MLA ref** | A100 80GB | [→](https://github.com/atandra2000/DeepSeek-v3-Lite) |
