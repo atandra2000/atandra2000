@@ -6,7 +6,7 @@
 
 LLMs · Latent Diffusion · Multimodal · Video Understanding · Agentic ML · State-Space Models · Long-Context Attention
 
-`14 from-scratch projects` · `78% memory optimization` · `878-test agentic platform` · `860M-param UNet trained from random init`
+`16 from-scratch projects` · `78% memory optimization` · `878-test agentic platform` · `860M-param UNet trained from random init`
 
 </div>
 
@@ -22,7 +22,7 @@ Remote-friendly · Available worldwide
 
 ## 🧭 Now
 
-Shipping the **Autonomous ML Research Engineer** platform (15 phases, 23 agents) and just released two new long-context / state-space reproductions: **GPT-OSS-Lite** (sliding/full attention alternation + learned sinks, 2× KV-cache cut at 128K) and **Mamba-3-Lite** (complex-valued SSD + MIMO mixing, zero causal conv).
+Shipping the **Autonomous ML Research Engineer** platform (15 phases, 23 agents) and developing **HyMo** — the flagship hybrid language model (3:1 Gated Delta Net / Multi-Head Latent Attention, Asymmetric MoE, custom Triton GDN kernel, 750M active / 1.86B stored params). Also just released two new long-context / state-space reproductions: **GPT-OSS-Lite** (sliding/full attention alternation + learned sinks, 2× KV-cache cut at 128K) and **Mamba-3-Lite** (complex-valued SSD + MIMO mixing, zero causal conv), plus two new vision products: **Detect-Objects** (deformable set-prediction detector) and **Upscale-SR** (4× diffusion + SSM super-resolution).
 
 ---
 
@@ -34,7 +34,7 @@ Shipping the **Autonomous ML Research Engineer** platform (15 phases, 23 agents)
 ![CUDA](https://img.shields.io/badge/CUDA-12.x-76B900?logo=nvidia&logoColor=white)
 
 **Architectures**  
-Transformers · GQA · MLA · Sliding/Full Attention Alternation · Learned Attention Sinks · YaRN RoPE · SwiGLU · RMSNorm · MoE · Gated Delta Net · MTP · SSD (real & complex64) · MIMO head mixing · Diffusion UNet · VAE · GAN · CycleGAN · AdaIN · ST-GCN · HRNet · SigLIP
+Transformers · GQA · MLA · Sliding/Full Attention Alternation · Learned Attention Sinks · YaRN RoPE · SwiGLU · RMSNorm · MoE · Gated Delta Net · MTP · SSD (real & complex64) · MIMO head mixing · Diffusion UNet · VAE · GAN · CycleGAN · AdaIN · ST-GCN · HRNet · SigLIP · Deformable Detection · Super-Resolution
 
 **Optimization & numerics**  
 BF16 · FP16 · FP8 · Flash Attention 2 · SDPA · `torch.compile` · `channels_last` · Gradient checkpointing · μP scaling · WSD LR · NorMuon · CautiousAdamW · Chunked cross-entropy · Disk-backed token caching · Fused optimizers · Chinchilla-optimal scaling
@@ -43,41 +43,56 @@ BF16 · FP16 · FP8 · Flash Attention 2 · SDPA · `torch.compile` · `channels
 A100 80GB · RTX 5090 (Blackwell) · RTX 6000 Ada · RTX 3090 · P100 · 2× T4
 
 **Tooling**  
-HuggingFace · diffusers · tiktoken · W&B · Comet · safetensors · ONNX · TensorRT · FastAPI · pydantic v2 · ChromaDB · Ollama Cloud
+HuggingFace · diffusers · tiktoken · W&B · Comet · safetensors · ONNX · TensorRT · FastAPI · Gradio · pydantic v2 · ChromaDB · Ollama Cloud
 
 ---
 
 ## 🏆 Highlights
 
 - **78% peak memory reduction (92 GB → 20 GB)** for LLM pretraining via gradient checkpointing, chunked cross-entropy, and disk-backed token caching — enabling 2× batch-size headroom on a single A100 80GB.
-- **Training loss 0.0947 at epoch 16** on Stable Diffusion 1.x (860M UNet) trained from random init across a 7-phase curriculum on 2× RTX 5090; epoch-42 checkpoint released on HuggingFace.
+- **750M active / 1.86B stored params** in **HyMo** — a novel 3:1 Gated Delta Net / Multi-Head Latent Attention hybrid with Asymmetric MoE, MTP, a custom Triton GDN kernel, and FSDP-2 dual-optimizer training.
+- **Training loss 0.0947 at epoch 16** on Stable Diffusion 1.x (860M UNet) trained from random init across a 7-phase curriculum on 2× RTX 5090; epoch-42 checkpoint released.
 - **2× KV-cache reduction at 128K context** in GPT-OSS-Lite via sliding-window(128) / full-attention alternation with learned attention-sink bias and YaRN RoPE — verified at 1.13 GB vs 2.25 GB pure GQA (BF16).
 - **Complex64 SSD with 50% smaller state** (N=64 vs Mamba-2's N=128) achieves parity loss on the same 8.0B-token Chinchilla run, plus MIMO inter-head mixing and zero causal convolution — pure PyTorch, no custom CUDA.
 - **~30 FPS inference on RTX 3090** for skeleton-based action recognition, served via ONNX + TensorRT + FastAPI.
 - **878 passing tests · 15 cooperating phases · 23 agents · 61 tools · 186 models** in the Autonomous ML Research Engineer platform — full paper-to-conclusions loop with self-repair and provider-agnostic LLM routing.
-- **415.6M active / 868.6M stored params** in FusionLLM — a novel hybrid of MLA + Gated Delta Net + MoE + MTP in a 24-layer decoder.
 - **643-line technical deep-dive on MLA** (Multi-Head Latent Attention) covering KV-cache math, low-rank compression, the absorption-trick derivation, and decoupled RoPE mechanics.
 
 ---
 
 ## 📂 Projects
 
-| Domain | Project | Highlight | Hardware | Repo |
-|--------|---------|-----------|----------|------|
-| **LLM** | **GPT-OSS-Lite** (502M / 247M active) | Sliding(128)/Full attention alt · learned sink bias · YaRN 128K · top-2-of-8 MoE · **2× KV-cache cut at 128K** · **130 tests** | A100 80GB | [→](https://github.com/atandra2000/GPT-OSS-Lite) |
-| **LLM** | **Mamba-3-Lite** (404M) | Complex64 SSD (N=64) · MIMO head mixing · zero causal conv · pure PyTorch (no `mamba-ssm`, no custom CUDA) | A100 80GB | [→](https://github.com/atandra2000/Mamba-3-Lite) |
-| **LLM** | **DeepSeek-v3-Lite** (422M) | MLA + AuxLossFreeGate MoE + MTP, end-to-end with absorption-trick inference | A100 80GB | [→](https://github.com/atandra2000/DeepSeek-v3-Lite) |
-| **LLM** | **LLaMA-3-Lite** (515M) | GQA · RoPE θ=500K · SwiGLU · RMSNorm · FA2 · chunked CE · **78% memory cut** | A100 80GB | [→](https://github.com/atandra2000/LLaMA-3-Lite) |
-| **LLM** | **FusionLLM** (415.6M / 868.6M) | Novel MLA + Gated Delta Net + MoE + MTP hybrid · NorMuon + CautiousAdamW · WSD | A100 80GB | [→](https://github.com/atandra2000/FusionLLM) |
-| **LLM** | **GPT-From-Scratch** (~6M) | Educational GPT-style decoder · 4 layers · char-level tokenizer · loss 8.69 → 0.83 · HF weight loading | P100 / CUDA / MPS | [→](https://github.com/atandra2000/GPT-From-Scratch) |
-| **LLM** | **TranslationLM** (EN→IT) | Encoder–decoder Transformer · loss 6.17 → 2.28 · BLEU/CER/WER | P100 | [→](https://github.com/atandra2000/TranslationLM) |
-| **Vision** | **Stable Diffusion 1.x** (860M UNet) | Custom UNet trained from random init · 7 phases · 1.3M+ images · **best loss 0.0947** · epoch-42 checkpoint on HF | 2× RTX 5090 | [→](https://github.com/atandra2000/StableDiffusion) |
-| **Vision** | **ActionRecognition** (120 cls) | HRNet pose + Two-Stream CTR-GCN · **~30 FPS** · ONNX + TensorRT | RTX 3090 | [→](https://github.com/atandra2000/ActionRecognition) |
-| **Vision** | **FaceAgingCycleGAN** (256²) | Per-layer AdaIN conditioning · 3-scale PatchGAN · LSGAN + R1 GP | RTX 6000 Ada | [→](https://github.com/atandra2000/FaceAgingCycleGAN) |
-| **Vision** | **FaceGenerationVAE** (β-VAE) | 50 epochs · recon MSE 0.0152 · linear KL annealing · bilinear-upsample decoder | P100 | [→](https://github.com/atandra2000/FaceGenerationVAE) |
-| **Vision** | **DCGAN-Face-Generation** | 50 epochs · 202K CelebA · D loss → ln 2 ≈ 0.693 equilibrium | 2× T4 | [→](https://github.com/atandra2000/DCGAN-Face-Generation) |
-| **Multimodal** | **VisionLangModel** (PaliGemma-style) | SigLIP ViT + Gemma decoder + linear projector · zero pretrained weights | P100 | [→](https://github.com/atandra2000/VisionLanguageModel) |
-| **Agentic** | **Autonomous ML Research Engineer** | 15-phase multi-agent platform · paper → plan → patch → train → evaluate → report · provider-agnostic LLM routing | Local + Ollama Cloud | [→](https://github.com/atandra2000/AutonomousResearcher) |
+### LLM (7)
+
+| Project | Scale | Highlight | Hardware | Repo |
+|---------|-------|-----------|----------|------|
+| **HyMo** ⭐ | 750M active / 1.86B stored | 3:1 GDN/MLA hybrid · Asymmetric MoE · MTP · custom Triton GDN kernel · FSDP-2 | 4× A100 80GB | [→](https://github.com/atandra-bharati/hymo) |
+| **GPT-OSS-Lite** | 502M / 247M active | Sliding(128)/Full attention alt · learned sink bias · YaRN 128K · top-2-of-8 MoE · **2× KV-cache cut at 128K** · **130 tests** | A100 80GB | [→](https://github.com/atandra2000/GPT-OSS-Lite) |
+| **Mamba-3-Lite** | ~380M | Complex64 SSD (N=64) · MIMO head mixing · zero causal conv · pure PyTorch | A100 80GB | [→](https://github.com/atandra2000/Mamba-3-Lite) |
+| **DeepSeek-v3-Lite** | ~422M | MLA + AuxLossFreeGate MoE + MTP, end-to-end with absorption-trick inference · **643-line MLA ref** | A100 80GB | [→](https://github.com/atandra2000/DeepSeek-v3-Lite) |
+| **LLaMA-3-Lite** | ~515M | GQA · RoPE θ=500K · SwiGLU · RMSNorm · FA2 · chunked CE · **78% memory cut** | A100 80GB | [→](https://github.com/atandra2000/LLaMA-3-Lite) |
+| **TranslationLM** (EN→IT) | ~44M | Encoder–decoder Transformer · loss 6.17 → 2.28 · BLEU/CER/WER | P100 | [→](https://github.com/atandra2000/TranslationLM) |
+| **GPT-2** | ~124M | Educational nanoGPT-style decoder · tiktoken BPE · HF weight loading | MPS / CUDA / CPU | [→](https://github.com/atandra2000/GPT2) |
+
+### Vision (8)
+
+| Project | Scale | Highlight | Hardware | Repo |
+|---------|-------|-----------|----------|------|
+| **Stable Diffusion 1.x** | 860M UNet | Custom UNet trained from random init · 7 phases · 1.3M+ images · **best loss 0.0947** · epoch-42 checkpoint | 2× RTX 5090 | [→](https://github.com/atandra2000/StableDiffusion) |
+| **Detect-Objects** | ~50M | RT-DETR/DINO-style deformable set-prediction detector · no anchors/NMS · COCO 2017 · Gradio + ONNX | 2× RTX 5090 | [→](https://github.com/atandra2000/detect-objects) |
+| **Upscale-SR** | ~75M | 4× real-world photo SR · latent-diffusion UNet + SSM refiner · Real-ESRGAN degradation | 2× RTX 5090 | [→](https://github.com/atandra2000/upscale-sr) |
+| **ActionRecognition** | 120 cls | HRNet pose + Two-Stream CTR-GCN · **~30 FPS** · ONNX + TensorRT | RTX 3090 | [→](https://github.com/atandra2000/ActionRecognition) |
+| **FaceAgingCycleGAN** | 256² | Per-layer AdaIN conditioning · 3-scale PatchGAN · LSGAN + R1 GP | RTX 6000 Ada | [→](https://github.com/atandra2000/FaceAgingCycleGAN) |
+| **FaceGenerationVAE** | β-VAE | 50 epochs · recon MSE 0.0152 · linear KL annealing · bilinear-upsample decoder | P100 | [→](https://github.com/atandra2000/FaceGenerationVAE) |
+| **DCGAN-Face-Generation** | 6.4M | 50 epochs · 202K CelebA · D loss → ln 2 ≈ 0.693 equilibrium | 2× T4 | [→](https://github.com/atandra2000/DCGAN-Face-Generation) |
+| **VisionLangModel** | PaliGemma-style | SigLIP ViT + Gemma decoder + linear projector · zero pretrained weights | P100 | [→](https://github.com/atandra2000/VisionLangModel) |
+
+### Agentic (2)
+
+| Project | Highlight | Hardware | Repo |
+|---------|-----------|----------|------|
+| **Autonomous ML Research Engineer** | 15-phase multi-agent platform · paper → plan → patch → train → evaluate → report · 23 agents · 61 tools · 186 models · **878 tests** · provider-agnostic LLM routing | Local + Ollama Cloud | [→](https://github.com/atandra2000/AutonomousResearcher) |
+| **newsagent** | Autonomous AI research-intelligence agent · daily 15+ source sweep · LLM-reasoned Markdown report · 237 passing tests | Local | [→](https://github.com/atandra2000/news-agent) |
 
 ---
 
@@ -94,7 +109,7 @@ HuggingFace · diffusers · tiktoken · W&B · Comet · safetensors · ONNX · T
 - **From-scratch PyTorch** — no Trainer, no Lightning, no accelerate; every layer written by hand
 - **Single-GPU feasibility** — BF16, gradient checkpointing, FA2, `channels_last`, fused optimizers
 - **Faithful reproductions** — DeepSeek-V3, LLaMA-3, GPT-OSS, Mamba-3, PaliGemma, DCGAN implemented to the paper
-- **Novel hybrids** — FusionLLM (MLA + GDN + MoE + MTP), FaceAgingCycleGAN (AdaIN-conditioned CycleGAN), GPT-OSS-Lite (sliding/full alt + learned sinks + YaRN)
+- **Novel hybrids** — HyMo (GDN + MLA + MoE + MTP), FaceAgingCycleGAN (AdaIN-conditioned CycleGAN), GPT-OSS-Lite (sliding/full alt + learned sinks + YaRN)
 - **Production hygiene** — atomic checkpoints (`.tmp.pt` → `os.rename`), full RNG-state reproducibility, W&B / Comet tracking, CI lint + tests
 - **Data pipelines** — resumable download → filter → tokenize → shard → streaming loader, with dedup and document packing; universal 8.0B-token shared pipeline across all LLM projects
 - **Post-training & inference** — speculative decoding (MTP-as-draft), Min-SNR loss weighting, EMA, classifier-free guidance
@@ -122,6 +137,6 @@ B.Tech, 2024 · Heritage Institute of Technology, Kolkata. Self-taught in deep l
 
 <div align="center">
 
-<sub>Last updated 2026-06-29 · 14 projects · Open to remote and on-site roles</sub>
+<sub>Last updated 2026-07-19 · 17 projects (7 LLM · 8 Vision · 2 Agentic) · Open to remote and on-site roles</sub>
 
 </div>
