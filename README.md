@@ -131,7 +131,7 @@ Building and shipping **production-grade from-scratch AI** — from LLM pre-trai
 | Project | Scale | Key Innovation | Hardware | Repo |
 |---------|-------|---------------|----------|------|
 | **Autonomous ML Research Engineer** | 15 phases · 23 agents · 61 tools | **Full paper → conclusions loop** · self-repair · provider-agnostic LLM routing · **878 tests** · 186-model registry | Local + Ollama | [→](https://github.com/atandra2000/AutonomousResearcher) |
-| **newsagent** | 237 tests | **Autonomous AI research-intel agent** · daily 15+ source sweep · LLM-reasoned reports with provenance | Local | [→](https://github.com/atandra2000/news-agent) |
+| **newsagent** | 291 tests | **Autonomous AI research-intel agent** · daily 15+ source sweep · LLM-reasoned reports with provenance | Local | [→](https://github.com/atandra2000/news-agent) |
 
 ---
 
@@ -223,7 +223,7 @@ B.Tech, 2024 · Heritage Institute of Technology, Kolkata. Self-taught in deep l
 <div align="center">
   <sub>
     <b>17 from-scratch projects</b> (7 LLM · 8 Vision · 2 Agentic) ·
-    Updated 2026-08-20 ·
+    Updated 2026-08-25 ·
     Open to remote and on-site DL/LLM/GenAI roles worldwide
   </sub>
   <br><br>
