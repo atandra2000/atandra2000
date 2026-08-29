@@ -28,7 +28,7 @@
 
 <!-- Key Metrics Row -->
 <p align="center">
-  <a href="#-projects"><img src="https://img.shields.io/badge/Projects-17-7B2FF7?style=for-the-badge&logo=github&logoColor=white" alt="17 Projects"></a>
+  <a href="#-projects"><img src="https://img.shields.io/badge/Projects-18-7B2FF7?style=for-the-badge&logo=github&logoColor=white" alt="18 Projects"></a>
   <a href="https://github.com/atandra2000/LLaMA-3-Lite"><img src="https://img.shields.io/badge/Memory%20Cut-78%25-00C853?style=for-the-badge&logo=memory&logoColor=white" alt="78% Memory Cut"></a>
   <a href="https://github.com/atandra2000/AutonomousResearcher"><img src="https://img.shields.io/badge/Tests-878-FF6F00?style=for-the-badge&logo=pytest&logoColor=white" alt="878 Tests"></a>
   <a href="https://github.com/atandra2000/StableDiffusion"><img src="https://img.shields.io/badge/Best%20Loss-0.0947-2962FF?style=for-the-badge&logo=weightsandbiases&logoColor=white" alt="Best Loss 0.0947"></a>
@@ -126,13 +126,13 @@ Building and shipping **production-grade from-scratch AI** — from LLM pre-trai
 | **DCGAN-Face-Generation** | 6.4M | **N(0,0.02) init** · 202K CelebA · D loss → ln 2 ≈ 0.693 GAN equilibrium | 2× T4 | [→](https://github.com/atandra2000/DCGAN-Face-Generation) |
 | **VisionLanguageModel** | PaliGemma-style | **SigLIP ViT + Gemma decoder** · linear projector · **zero pretrained weights** · COCO 2014 | P100 | [→](https://github.com/atandra2000/VisionLanguageModel) |
 
-### 🤖 Agentic (2)
+### 🤖 Agentic (3)
 
 | Project | Scale | Key Innovation | Hardware | Repo |
 |---------|-------|---------------|----------|------|
+| **LearnAgenticAI** | 10 projects · monorepo | **LangChain / LangGraph / LangSmith / MCP reference portfolio** · ReAct, RAG, Memory, Multi-Agent Supervisor, HITL, MCP Server, Deep Research, Structured Output, Eval Harness, Next.js 15 chat UI | Local + Docker | [→](https://github.com/atandra2000/LearnAgenticAI) |
 | **Autonomous ML Research Engineer** | 15 phases · 23 agents · 61 tools | **Full paper → conclusions loop** · self-repair · provider-agnostic LLM routing · **878 tests** · 186-model registry | Local + Ollama | [→](https://github.com/atandra2000/AutonomousResearcher) |
 | **newsagent** | 291 tests | **Autonomous AI research-intel agent** · daily 15+ source sweep · LLM-reasoned reports with provenance | Local | [→](https://github.com/atandra2000/news-agent) |
-
 ---
 
 ## ✍️ Writing
@@ -175,7 +175,11 @@ Building and shipping **production-grade from-scratch AI** — from LLM pre-trai
   <img src="https://img.shields.io/badge/P100-76B900?style=flat-square&logo=nvidia&logoColor=white" alt="P100">
   <img src="https://img.shields.io/badge/2×_T4-76B900?style=flat-square&logo=nvidia&logoColor=white" alt="2× T4">
   <br><br>
-  <b>Tooling</b><br>
+  <b>Tooling & Frameworks</b><br>
+  <img src="https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white" alt="LangChain">
+  <img src="https://img.shields.io/badge/LangGraph-1C3C3C?style=flat-square" alt="LangGraph">
+  <img src="https://img.shields.io/badge/LangSmith-FF6B6B?style=flat-square" alt="LangSmith">
+  <img src="https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white" alt="Next.js">
   <img src="https://img.shields.io/badge/HuggingFace-FFD21E?style=flat-square&logo=huggingface&logoColor=black" alt="HuggingFace">
   <img src="https://img.shields.io/badge/diffusers-FFD21E?style=flat-square&logo=huggingface&logoColor=black" alt="diffusers">
   <img src="https://img.shields.io/badge/W&B-FCB439?style=flat-square&logo=weightsandbiases&logoColor=black" alt="W&B">
@@ -186,7 +190,6 @@ Building and shipping **production-grade from-scratch AI** — from LLM pre-trai
   <img src="https://img.shields.io/badge/Gradio-F97316?style=flat-square&logo=gradio&logoColor=white" alt="Gradio">
   <img src="https://img.shields.io/badge/pydantic-E92063?style=flat-square&logo=pydantic&logoColor=white" alt="pydantic">
 </p>
-
 ---
 
 ## 🔬 Engineering Philosophy
@@ -222,8 +225,8 @@ B.Tech, 2024 · Heritage Institute of Technology, Kolkata. Self-taught in deep l
 
 <div align="center">
   <sub>
-    <b>17 from-scratch projects</b> (7 LLM · 8 Vision · 2 Agentic) ·
-    Updated 2026-08-25 ·
+    <b>18 from-scratch projects</b> (7 LLM · 8 Vision · 3 Agentic) ·
+    Updated 2026-08-29 ·
     Open to remote and on-site DL/LLM/GenAI roles worldwide
   </sub>
   <br><br>
